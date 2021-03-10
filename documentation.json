@@ -88,7 +88,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<wdk-test></wdk-test>\n<router-outlet></router-outlet>"
+            "templateData": "<wdk-button [label]=\"'button'\" primary></wdk-button>\n<hr />\n<wdk-header-menu [title]=\"'the Title'\">\n  <!-- this svg should be set from a portal instead -->\n  <svg\n    width=\"32\"\n    height=\"32\"\n    viewBox=\"0 0 32 32\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n  >\n    <g fill=\"none\" fillRule=\"evenodd\">\n      <path\n        d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n        fill=\"#FFF\"\n      />\n      <path\n        d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n        fill=\"#555AB9\"\n      />\n      <path\n        d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n        fill=\"#91BAF8\"\n      />\n    </g>\n  </svg>\n</wdk-header-menu>\n<router-outlet></router-outlet>\n"
         },
         {
             "name": "ButtonComponent",
@@ -172,6 +172,61 @@
             }
         },
         {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-913e75527b3711e749227f6cd128fa89-1",
+            "file": "projects/web-development-kit/src/lib/components/button/button.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "wdk-button",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "line": 11,
+                    "type": "string | undefined"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'wdk-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class ButtonComponent {\n  @Input()\n  label: string | undefined;\n\n  constructor() {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 11
+            },
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ButtonComponent-1",
+            "templateData": "<button>{{label}}</button>"
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-246e2a69dc126a3bd76c6328dd3b93e2",
             "file": "stories/header.component.ts",
@@ -234,71 +289,9 @@
             "stylesData": ""
         },
         {
-            "name": "PageComponent",
-            "id": "component-PageComponent-cca1a8911321fa17756ce90c90de65cc",
-            "file": "stories/page.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-page",
-            "styleUrls": [
-                "./page.css"
-            ],
-            "styles": [],
-            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "line": 66,
-                    "type": "unknown"
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 75,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 69,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 72,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n\n// export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (\n//   <article>\n//     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />\n\n// );\n// Page.propTypes = {\n//   user: PropTypes.shape({}),\n//   onLogin: PropTypes.func.isRequired,\n//   onLogout: PropTypes.func.isRequired,\n//   onCreateAccount: PropTypes.func.isRequired,\n// };\n\n// Page.defaultProps = {\n//   user: null,\n// };\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nh2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\np {\n  margin: 1em 0;\n}\n\na {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nli {\n  margin-bottom: 8px;\n}\n\n.tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
-                    "styleUrl": "./page.css"
-                }
-            ],
-            "stylesData": ""
-        },
-        {
-            "name": "TestComponent",
-            "id": "component-TestComponent-3f4f9ff69e65ec475c9b63f9158cca23",
-            "file": "projects/web-development-kit/src/lib/components/test/test.component.ts",
+            "name": "HeaderMenuComponent",
+            "id": "component-HeaderMenuComponent-3d4920dd8f8bbc14287df47e8189ddca",
+            "file": "projects/web-development-kit/src/lib/components/menu/header-menu/header-menu.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
@@ -306,14 +299,22 @@
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "wdk-test",
-            "styleUrls": [],
+            "selector": "wdk-header-menu",
+            "styleUrls": [
+                "./header-menu.component.scss"
+            ],
             "styles": [],
             "templateUrl": [
-                "./test.component.html"
+                "./header-menu.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "line": 11,
+                    "type": "string"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -322,11 +323,22 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'wdk-test',\n  templateUrl: './test.component.html',\n  encapsulation: ViewEncapsulation.None,\n})\nexport class TestComponent {}\n",
+            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'wdk-header-menu',\n  templateUrl: './header-menu.component.html',\n  styleUrls: ['./header-menu.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class HeaderMenuComponent {\n  @Input()\n  title!: string;\n  constructor() {}\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./header-menu.component.scss"
+                }
+            ],
             "stylesData": "",
-            "templateData": "<p>test works!</p>\n"
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 11
+            },
+            "templateData": "<header>\n    <div class=\"wrapper\">\n      <div>\n          <!-- TODO: use cdk portal to bind to an icon property instead-->\n        <ng-content></ng-content>\n        <h1>{{title}}</h1>\n      </div>\n      <div>\n       <wdk-button [label]=\"'header button'\" secondary></wdk-button>\n      </div>\n    </div>\n  </header>"
         }
     ],
     "modules": [
@@ -350,6 +362,12 @@
                     "elements": [
                         {
                             "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "MenuModule"
                         }
                     ]
                 },
@@ -401,7 +419,7 @@
             ]
         },
         {
-            "name": "ComponentsModule",
+            "name": "ButtonModule",
             "children": [
                 {
                     "type": "providers",
@@ -411,7 +429,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "TestComponent"
+                            "name": "ButtonComponent"
                         }
                     ]
                 },
@@ -421,11 +439,7 @@
                 },
                 {
                     "type": "exports",
-                    "elements": [
-                        {
-                            "name": "TestComponent"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "bootstrap",
@@ -438,7 +452,7 @@
             ]
         },
         {
-            "name": "WebDevelopmentKitModule",
+            "name": "ComponentsModule",
             "children": [
                 {
                     "type": "providers",
@@ -450,11 +464,59 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "MenuModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
                     "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "MenuModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HeaderMenuComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "HeaderMenuComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -518,14 +580,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -534,26 +588,10 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/test.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -592,32 +630,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Header.stories.ts",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/test.stories.ts",
-                "type": "Story<TestComponent>",
-                "defaultValue": "(args: TestComponent) => ({\r\n  component: TestComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Page.stories.ts",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+                "type": "Story<HeaderMenuComponent>",
+                "defaultValue": "(args: HeaderMenuComponent) => ({\n  component: HeaderMenuComponent,\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -716,8 +738,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
                 }
             ],
             "stories/Header.stories.ts": [
@@ -742,52 +764,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Header.stories.ts",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
-                }
-            ],
-            "stories/Page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
-                }
-            ],
-            "stories/test.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/test.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/test.stories.ts",
-                    "type": "Story<TestComponent>",
-                    "defaultValue": "(args: TestComponent) => ({\r\n  component: TestComponent,\r\n  props: args,\r\n})"
+                    "type": "Story<HeaderMenuComponent>",
+                    "defaultValue": "(args: HeaderMenuComponent) => ({\n  component: HeaderMenuComponent,\n  props: args,\n})"
                 }
             ]
         },
@@ -810,7 +788,7 @@
         ]
     },
     "coverage": {
-        "count": 3,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -872,12 +850,21 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/web-development-kit/src/lib/components/test/test.component.ts",
+                "filePath": "projects/web-development-kit/src/lib/components/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "TestComponent",
+                "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/web-development-kit/src/lib/components/menu/header-menu/header-menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderMenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -981,36 +968,6 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "stories/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1026,35 +983,6 @@
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/page.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "PageComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/test.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/test.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             }
         ]
