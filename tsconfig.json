@@ -16,10 +16,15 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "web-development-kit": [
+        "dist/web-development-kit/web-development-kit",
+        "dist/web-development-kit"
+      ],
+      "web-development-kit/styles": ["dist/web-development-kit/styles"]
+    },
+    "types": ["jasmine", "jest", "mocha"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
