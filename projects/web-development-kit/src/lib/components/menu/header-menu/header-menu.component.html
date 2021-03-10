@@ -1,12 +1,12 @@
 <header>
-    <div class="wrapper">
-      <div>
-          <!-- TODO: use cdk portal to bind to an icon property instead-->
-        <ng-content></ng-content>
-        <h1>{{title}}</h1>
-      </div>
-      <div>
-       <wdk-button [label]="'header button'" secondary></wdk-button>
-      </div>
+  <div class="wrapper">
+    <div>
+      <!-- TODO: use cdk portal to bind to an icon property instead-->
+      <span [cdkPortalOutlet]="iconPortal"></span>
+      <h1>{{ title }}</h1>
     </div>
-  </header>
+    <div>
+      <wdk-button [label]="'header button'" secondary></wdk-button>
+    </div>
+  </div>
+</header>

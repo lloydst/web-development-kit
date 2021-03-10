@@ -1,0 +1,23 @@
+<!-- This button triggers the overlay and is it's origin -->
+<wdk-button
+  secondary
+  (click)="isOpen = !isOpen"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+  label="click me to trigger dropdown"
+>
+  {{ isOpen ? "Close" : "Open" }}
+</wdk-button>
+
+<!-- This template displays the overlay content and is connected to the button -->
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+>
+  <ul class="example-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</ng-template>
